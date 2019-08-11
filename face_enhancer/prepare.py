@@ -3,7 +3,7 @@ from pathlib import Path
 import cv2
 from tqdm import tqdm
 
-face_sync_dir = Path('../data/face/ ')
+face_sync_dir = Path('../data/face/')
 face_sync_dir.mkdir(exist_ok=True)
 test_sync_dir = Path('../data/face/test_sync/ ')
 test_sync_dir.mkdir(exist_ok=True)
@@ -74,5 +74,3 @@ synthesized_image_dir = './prepare/target/test_latest/images/'
 for img_idx in tqdm(range(len(os.listdir(synthesized_image_dir)))):
     img = cv2.imread(synthesized_image_dir+' {:05}_synthesized_image.jpg'.format(img_idx))
     cv2.imwrite(str(test_sync_dir) + '{:05}.png'.format(img_idx), img)
-
-
